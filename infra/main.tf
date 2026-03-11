@@ -88,5 +88,6 @@ resource "aws_instance" "minikube_server" {
   tags = {
     Name = "minikube-server"
     Role = "control"
+    project = "minikube-host"
   }
 }
