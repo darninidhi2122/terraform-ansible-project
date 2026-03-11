@@ -5,7 +5,7 @@ import subprocess
 
 try:
     ip = subprocess.check_output(
-        ["terraform", "output", "-raw", "instance_ip"],
+        ["terraform", "output", "-raw", "minikube_public_ip"],
         cwd="../../infra"
     ).decode("utf-8").strip()
 
@@ -16,8 +16,7 @@ try:
         "_meta": {
             "hostvars": {
                 ip: {
-                    "ansible_user": "ubuntu",
-                    "ansible_ssh_private_key_file": "~/.ssh/id_rsa"
+                    "ansible_user": "ubuntu"
                 }
             }
         }
@@ -25,5 +24,5 @@ try:
 
     print(json.dumps(inventory))
 
-except:
+except Exception as e:
     print(json.dumps({}))
