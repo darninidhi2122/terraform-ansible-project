@@ -1,0 +1,7 @@
+image:
+  repository: darninidhi2122/nginx-devops
+  tag: latest
+
+service:
+  type: NodePort
+  port: 80
