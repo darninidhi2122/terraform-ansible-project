@@ -115,7 +115,7 @@ pipeline {
             steps {
                 sshagent(credentials: ['ec2-key']) {
                     sh """
-                    ssh -o StrictHostKeyChecking=no ubuntu@${EC2_IP} << 'EOF'
+                    ssh -o StrictHostKeyChecking=no ubuntu@${EC2_IP} '
                     
                     echo "Cloning repository on EC2..."
                     if [ ! -d terraform-ansible-project ]; then
@@ -142,7 +142,7 @@ pipeline {
                     echo "Checking services..."
                     kubectl get svc -A
 
-                    EOF
+                    '
                     """
                 }
             }
