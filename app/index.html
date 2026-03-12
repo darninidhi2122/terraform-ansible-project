@@ -1,10 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>DevOps Pipeline</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps Explained</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #e0f0ff, #ffffff);
+      color: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #1d3557;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #457b9d;
+    }
+
+    .infographic {
+      width: 100%;
+      max-width: 600px;
+      margin: 30px auto;
+      display: flex;
+      justify-content: center;
+    }
+
+    .infographic img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      width: 100%;
+      max-width: 1000px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 25px 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      flex: 1 1 300px;
+      min-width: 280px;
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #1d3557;
+    }
+
+    .card p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .benefits li {
+      margin: 10px 0;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .benefits li::before {
+      content: '✔';
+      color: #2a9d8f;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    @media(max-width: 768px){
+      .content {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
-<h1>🚀 Jenkins + Terraform + Ansible + Helm</h1>
-<p>Nginx deployed in Minikube!</p>
+
+<header>
+  <h1>DevOps Explained</h1>
+  <p>Bridging the gap between Development and Operations</p>
+</header>
+
+<div class="infographic">
+  <img src="file:///mnt/data/a_screenshot_of_html_css_and_javascript_code_is.png" alt="DevOps Infographic">
+</div>
+
+<div class="content">
+  <div class="card">
+    <h2>What is DevOps?</h2>
+    <p>DevOps is a set of practices that combines software development (Dev) and IT operations (Ops). It aims to shorten the development lifecycle and deliver high-quality software continuously.</p>
+  </div>
+  <div class="card">
+    <h2>Key Benefits of DevOps</h2>
+    <ul class="benefits">
+      <li>Faster delivery and deployment</li>
+      <li>Improved collaboration and communication</li>
+      <li>Increased efficiency and automation</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  Continuous integration and continuous delivery (CI/CD) are key principles of DevOps.
+</footer>
+
 </body>
 </html>
