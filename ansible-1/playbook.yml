@@ -45,12 +45,22 @@
         enabled: true
         state: started
 
+    - name: Wait for Docker to start
+      ansible.builtin.shell: docker info
+      register: docker_status
+      retries: 10
+      delay: 5
+      until: docker_status.rc == 0
+
     - name: Add user to docker group
       ansible.builtin.user:
         name: "{{ target_user }}"
         groups: docker
         append: yes
-
+     
+    - name: Reset SSH connection to apply docker group
+      meta: reset_connection
+    
     - name: Download kubectl
       ansible.builtin.get_url:
         url: "https://dl.k8s.io/release/{{ kubectl_version }}/bin/linux/amd64/kubectl"
